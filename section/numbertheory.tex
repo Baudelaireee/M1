@@ -165,10 +165,10 @@ It is better to consider the discriminant in a separable extension, although we 
 
 \end{proof}
 
-\begin{example}
+\begin{colorexample}
     If \(P(X) = X^n+aX+b\), the the discriminant of the polynomial is 
     \[\mathrm{Disc}(P) = (-1)^{n(n-1)/2}[n^nb^{n-1} + (1-n)^{n-1}a^n]\]
-\end{example}
+\end{colorexample}
 \subsection{Number fields}
 
 To motivate the algebraic approach, we firstly consider a typical example in number theory, it will be the basis of the discussion.
@@ -539,9 +539,9 @@ with the logarithm map naturally defined by
 \[\log: K^\times_{\infty} \to \mathbb{L}, \quad (x_1,\dots,x_r,z_1,\dots,z_s) \mapsto (\log|x_1|,\dots,\log|x_r|,2\log|z_1|,\dots,2\log|z_s|)\]
 hence exactly here \(l = \Log \circ \iota\), based on the definition we can quickly investigate some properties:
 \begin{itemize}
-    \item The kernel of \(l\) is the group of roots of unity  \(\mu(K)\), hence it motivates us to restrict the map \(l\) on \(\ok^\times\) for the structure.
-    \item Define the norm map
-    \[N: K_{\infty} \to \rr, \quad x \mapsto \prod_{x \text{ real }}x \prod_{z \text{ complex }} |z|^2 \]
+    
+    \item Define the norm map (similar with the adele norm)
+    \[N: K_{\infty} \to \rr, \quad x \mapsto \prod_{x \text{ real }}|x| \prod_{z \text{ complex }} |z|^2 \]
     and trace map
     \[T: \mathbb{L} \to \rr, \quad x \mapsto \sum_{i=1}^{r+s} x_i\]
     such that the following diagram commutes
@@ -558,15 +558,31 @@ hence exactly here \(l = \Log \circ \iota\), based on the definition we can quic
 	\arrow["{\log|-|}"', from=2-2, to=2-3]
 \end{tikzcd}\]
 
-    \item To restrict the map, notice the following equivalent conditions
-    \[x \in \ok^\times \iff \mathrm{N}_{K/\mathbb{Q}}(x) = \pm 1 \iff N(\iota(x)) = \pm 1 \iff T(l(x)) = 0\]
+\item The kernel of \(l\) is the group of roots of unity  \(\mu(K)\), hence it motivates us to restrict the map \(l\) on \(\ok^\times\) for the structure, and it is not difficult to verify the following equivalent condition:
+    \[x \in \ok^\times \iff \mathrm{N}_{K/\mathbb{Q}}(x) = \pm 1 \iff N(\iota(x)) =  1 \iff T(l(x)) = 0\]
     Hence it motivates us to define the \textbf{hyperplane}
     \[H := \{x \in \mathbb{L} \mid x_1 + \cdots + x_{r+s} = 0\} \]
-    as the \(r+s-1\) dimensional subspace of \(\mathbb{L}\) 
+    it is a subspace of \(\mathbb{L}\) of dimension \(r+s-1\), and \textbf{norm-one surface}
+    \[S = \{x \in K_\infty \mid N(x) = 1\}\]
+    it is a closed subgroup of minkowski space \(K_{\infty }\).
     
 \end{itemize}
 
     \end{remark}
+
+\begin{colortheorem}[Dirichlet]
+    \(l(\mathcal{O}_K^\times)\) is a complet lattice of \(\mathbb{L}\), and the structure of unit group can be given by isomorophism
+    \[\oo_K^\times \cong \mu(K) \times \zz^{r+s - 1}\]
+\end{colortheorem}
+
+\begin{proof}
+    
+\end{proof}
+
+The lebesgue volume of fundamental domain \(\mathbb{L}/ l(\oo_K^\times)\) is called the \textbf{regulator} of number field \(K\), and we usually denote it by \(d_K\); The generators of the free module \(l(\oo_K^\times)\) is called \textbf{fundamental unit} of \(K\), and if \(\{\varepsilon_1,\dots,\varepsilon_{r+s-1}\}\) is a basis, then each unit can be written as the form 
+\[u \cdot \varepsilon_1^{m_1} \cdots \varepsilon_{r+s-1}^{m_{r+s-1}}\]
+where \(u \in \mu(K)\).
+
     \newpage
     \subsection{Class group and Class number}
 
